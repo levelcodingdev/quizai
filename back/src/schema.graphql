@@ -1,0 +1,66 @@
+type QuizAttemptAnswer {
+    id: ID!
+    questionId: ID!
+    answerId: ID!
+    isCorrect: Boolean
+}
+
+type QuizAttempt {
+    id: ID!
+    isCompleted: Boolean!
+    quizAttemptAnswers: [QuizAttemptAnswer]!
+}
+
+type Answer {
+    id: ID!
+    answer: String!
+    isCorrect: Boolean
+}
+
+type Question {
+    id: ID!
+    question: String!
+    description: String
+    explanation: String
+    type: String!
+    answers: [Answer!]!
+}
+
+type Quiz {
+    id: ID!
+    title: String!
+    createdAt: String!
+    questions: [Question!]!
+    quizAttempts: [QuizAttempt]
+    promptText: String!
+}
+
+type GetQuizResponse {
+    quiz: Quiz
+}
+
+type CreateQuizResponse {
+    quizAttempt: QuizAttempt
+}
+
+input CreateQuizInput {
+    prompt: String!
+}
+
+input SubmitQuizAnswerInput {
+    quizId: ID!
+    quizAttemptId: ID!
+    questionId: ID!
+    answerIds: [ID]!
+}
+
+type Query {
+    getQuiz(quizAttemptId: String!): GetQuizResponse
+    getQuizResults(quizAttemptId: String!): GetQuizResponse
+}
+
+type Mutation {
+    createQuiz(input: CreateQuizInput!): CreateQuizResponse!
+    submitQuizAnswer(input: SubmitQuizAnswerInput): Boolean!
+    submitQuiz(quizAttemptId: ID!): Boolean!
+}

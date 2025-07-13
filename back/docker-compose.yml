@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_dev
+    restart: always
+    environment:
+      POSTGRES_USER: quizai
+      POSTGRES_PASSWORD: quizai
+      POSTGRES_DB: quizai
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    container_name: adminer_dev
+    restart: always
+    ports:
+      - 8080:8080 
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
