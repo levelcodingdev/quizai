@@ -4,7 +4,7 @@ import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import Question from "../../components/Question";
 
 const QuizResultsContent: React.FC = () => {
-    const {quiz, loading, error, correctCount, incorrectCount, score, checkAnswerSelected} = useQuizResultsContext();
+    const {quiz, loading, correctCount, incorrectCount, score, checkAnswerSelected} = useQuizResultsContext();
     const navigate = useNavigate();
 
     if (!quiz?.quizAttempts?.[0]?.isCompleted) {
