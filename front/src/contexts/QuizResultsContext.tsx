@@ -32,7 +32,7 @@ export const QuizResultsProvider: React.FC<{children: React.ReactNode, quizAttem
     children,
     quizAttemptId
 }) => {
-    const { data, loading, error, refetch } = useQuery(GET_QUIZ_RESULTS, {
+    const { data, loading, error } = useQuery(GET_QUIZ_RESULTS, {
         variables: {
             quizAttemptId
         }
