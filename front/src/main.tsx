@@ -6,7 +6,7 @@ import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@ap
 import { Toaster } from 'react-hot-toast'
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5000/graphql'
+  uri: 'https://quizai-xz1d.onrender.com/graphql'
 })
 
 const client = new ApolloClient({
