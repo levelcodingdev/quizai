@@ -4,7 +4,4 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "strict": false,
-  "noImplicitAny": false,
-  "skipLibCheck": true
 }
