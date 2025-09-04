@@ -42,7 +42,7 @@ export const QuizProvider: React.FC<QuizProviderProps> = ({
     children,
     quizAttemptId
 }) => {
-    const { data, loading, error, refetch } = useQuery(GET_QUIZ, {
+    const { data, loading, error } = useQuery(GET_QUIZ, {
         skip: !quizAttemptId,
         variables: {
             quizAttemptId
