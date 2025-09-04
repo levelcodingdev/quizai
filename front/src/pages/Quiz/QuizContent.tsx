@@ -13,10 +13,8 @@ const QuizContent: React.FC = () => {
         loading, 
         error,
 
-        questionAnswers,
         selectAnswer,
         isAnswerSelected,
-        submittingAnswer,
 
         goToNextQuestion,
         goToPreviousQuestion,
